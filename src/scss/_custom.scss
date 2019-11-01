@@ -1,0 +1,45 @@
+// Here you can add other styles
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Lato Light'), local('Lato-Light'), url(http://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh7USSwiPHA.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(http://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Lato Bold'), local('Lato-Bold'), url(http://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPHA.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Lato Black'), local('Lato-Black'), url(http://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh50XSwiPHA.ttf) format('truetype');
+  }
+
+.jumbotron {
+    margin: 0 -30px;
+    background-image: linear-gradient(-45deg,#29276b,#716aca);
+    border-radius: 0;
+    font-family: Lato,sans-serif;
+}
+
+.dropdown-item .fa {
+    color: $primary;
+}
+
+.dropdown-item:hover .fa {
+    color: $secondary;
+}
+
+.mt--5 {
+    margin-top: -3rem !important;
+    border-radius: 1em;
+}
