@@ -55,7 +55,7 @@ class DefaultHeader extends Component {
           </NavItem>
         )}
         </Nav>
-        <AppAsideToggler className="d-md-down-none" />
+        <AppAsideToggler className="d-md-down-none" defaultOpen />
       </React.Fragment>
     );
   }

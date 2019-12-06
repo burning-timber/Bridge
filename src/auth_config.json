@@ -1,4 +1,6 @@
 {
   "domain": "burningtimber.auth0.com",
-  "clientId": "MmJnRDKo23KKHGcJXbG6EWU50CYafVLO"
+  "clientId": "MmJnRDKo23KKHGcJXbG6EWU50CYafVLO",
+  "audience": "https://bridge-api.burningtimber.com",
+  "scope": "openid profile name email nickname"
 }
