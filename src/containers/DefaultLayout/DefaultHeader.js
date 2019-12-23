@@ -29,7 +29,7 @@ class DefaultHeader extends Component {
         />
         <AppSidebarToggler className="d-md-down-none" display="lg" />
         <Nav className="ml-auto" navbar>
-        {this.props.isAuthenticated && (
+        {this.props.isAuthenticated && this.props.user && (
           <UncontrolledDropdown nav direction="down">
             <DropdownToggle nav>
               <span>{this.props.user.name}</span>
