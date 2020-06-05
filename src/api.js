@@ -16,8 +16,16 @@ const taigaApi = axios.create({
     httpAgent: new http.Agent({ keepAlive: true }),
     maxRedirects: 10,
     maxContentLength: 50 * 1000 * 1000,
-    baseURL: apiUrl + '/taiga',
+    baseURL: 'https://taiga.burningtimber.com/api/v1',
 });
+
+const chatApi = axios.create({
+    timeout: 300000,
+    httpAgent: new http.Agent({ keepAlive: true }),
+    maxRedirects: 10,
+    maxContentLength: 50 * 1000 * 1000,
+    baseURL: apiUrl + '/chat',
+})
 
 function initializeWithTokens(token) {
     eventbriteApi.headers = {
@@ -31,5 +39,6 @@ function initializeWithTokens(token) {
 export default {
     eventbrite: eventbriteApi,
     taiga: taigaApi,
+    chat: chatApi,
     initialize: initializeWithTokens,
 };

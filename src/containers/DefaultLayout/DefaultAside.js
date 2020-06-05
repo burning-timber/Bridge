@@ -1,6 +1,10 @@
-import React, { Component } from 'react';
+import React, {  useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import 'amazon-connect-streams';
+import Chat from 'twilio-chat';
+//import { Chat as ChatUI } from '@progress/kendo-react-conversational-ui';
+
+import { useAuth0 } from "../../react-auth0-spa";
+import API from '../../api';
 
 const propTypes = {
   children: PropTypes.node,
@@ -8,36 +12,21 @@ const propTypes = {
 
 const defaultProps = {};
 
-class DefaultAside extends Component {
-  constructor(props) {
-    super(props);
-    this.containerDiv = React.createRef();
-  }
+const DefaultAside = (props) => {
+  const { getTokenSilently } = useAuth0();
+  const [ error, setError ] = useState('');
+  const [ isLoading, setLoading ] = useState(true);
+  const [ messages, setMessages ] = useState([]);
   
-  componentDidMount() {
-    // eslint-disable-next-line no-undef
-    connect.core.initCCP(this.containerDiv.current, {
-      ccpUrl: 'https://burningtimber.awsapps.com/connect/ccp-v2/',
-      loginUrl: 'https://burningtimber.auth0.com/samlp/IXfZthb3neyoDHUfB27Mc8bNMzQQuTWI?RelayState=https://us-east-1.console.aws.amazon.com/connect/federate/ff9e0789-24dc-4723-90e6-d9d2a6dc4b19?destination=%2Fconnect%2Fccp',
-      loginPopup: true,
-      softphone: {
-        allowFramedSoftphone: true
-      }
-    });
-  }
 
-  render() {
+  // eslint-disable-next-line
+  const { children, ...attributes } = this.props;
 
-    // eslint-disable-next-line
-    const { children, ...attributes } = this.props;
-
-    return (
-      <React.Fragment>
-          {/* ccp */}
-          <div className="containerDiv" ref={this.containerDiv} style={{height: "100%"}} />
-      </React.Fragment>
-    );
-  }
+  return (
+    <React.Fragment>
+        <div className="containerDiv" ref={this.containerDiv} style={{height: "100%"}} />
+    </React.Fragment>
+  );
 }
 
 DefaultAside.propTypes = propTypes;

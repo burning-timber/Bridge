@@ -32,7 +32,7 @@ const DefaultLayout = (props) => {
 
   const loading = () => <div className="animated fadeIn pt-1 text-center"><div className="sk-spinner sk-spinner-pulse"></div></div>;
   
-  const updateProjectNav = async () => {
+  const updateProjects = async () => {
     const token = await getTokenSilently();
     let projectData = await API.taiga.get('/projects', {
       headers: {'Authorization': 'Bearer ' + token}
@@ -44,7 +44,7 @@ const DefaultLayout = (props) => {
         for (const project of projectData) {
           navItems.push({
             name: project.name,
-            url: '/Project/' + project.id,
+            url: '/project/' + project.id,
             icon: 'cui-puzzle',
           });
         }
@@ -53,7 +53,7 @@ const DefaultLayout = (props) => {
   
   useEffect(() => {
     if(props.isAuthenticated && (!projectNavItems || projectNavItems.length === 0)) {
-      updateProjectNav();
+      updateProjects();
     }
   });
 
