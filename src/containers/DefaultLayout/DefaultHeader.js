@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { DropdownItem, DropdownMenu, DropdownToggle, Nav, UncontrolledDropdown, NavItem, Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 
@@ -37,7 +38,7 @@ class DefaultHeader extends Component {
             </DropdownToggle>
 
             <DropdownMenu right style={{ right: 0 }}>
-              <DropdownItem><i className="fa fa-user"></i> Profile</DropdownItem>
+              <Link to="/profile"><DropdownItem><i className="fa fa-user"></i> Profile</DropdownItem></Link>
               <DropdownItem onClick={this.props.logout}><i className="fa fa-lock"></i> Logout</DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
